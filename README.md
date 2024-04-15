@@ -1,5 +1,4 @@
-<img src="https://github.com/opxica/modular-ui/assets/67179751/c4f1045b-0d7a-4228-b663-3e1f8238d59c" alt="ModularUI : Pre-built beautiful flutter widgets Inspired by material-tailwind and shadcn/ui, NextUI ,  Chakra UI" />
-</p>
+
 
 
 <p align="center">
