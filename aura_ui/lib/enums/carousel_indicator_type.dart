@@ -1,0 +1,1 @@
+enum CarouselIndicatorType { dot, line }

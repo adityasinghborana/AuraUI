@@ -1,7 +1,5 @@
 library aura_ui;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/carousel/carousel.dart';
+export 'enums/carousel_button_type.dart';
+export 'enums/carousel_indicator_type.dart';
+export 'src/carousel/parallex_carousel.dart';

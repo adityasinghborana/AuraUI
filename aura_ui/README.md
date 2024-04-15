@@ -1,39 +1,59 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+<img src="https://github.com/opxica/modular-ui/assets/67179751/c4f1045b-0d7a-4228-b663-3e1f8238d59c" alt="ModularUI : Pre-built beautiful flutter widgets Inspired by material-tailwind and shadcn/ui, NextUI ,  Chakra UI" />
+</p>
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+<p align="center">
+Craft dynamic, inclusive, and stunning Flutter UIs with our  Modular-UI Design component widgets Inspired by material-tailwind and shadcn/ui, NextUI , Chakra UI
+</p>
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+<hr>
+
+## How to use
+
+#### Installation
+
+Run this command in your terminal
+
+```terminal
+flutter pub add aura_ui
+```
+
+#### Import
+
+Add this line to import the package.
+
+```dart
+import 'package:aura_ui/modular_ui.dart';
+```
+
+<hr>
+
+
+
+## Our Widget Catalog:
+
+
+### Carousels(More are still Coming )
+
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Comprehensive Modular-UI Design components:** Build modern and feature-rich interfaces with a wide range of buttons, cards, forms, navigation elements, and more.
+- **Highly customizable:** Tailor components to your exact needs with extensive styling options.
+- **Responsive design:** Ensure optimal UI experiences across different screen sizes.
+- **Accessibility focus:** Built with accessibility in mind, adhering to best practices.
+- **Lightweight and performant:** Efficiently crafted for smooth user interactions.
 
-## Getting started
+## Additional Features
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- **Custom themes and color palettes:** Define your own visual style for a cohesive look.
+- **Dark mode support:** Seamlessly adapt your UI to user preferences.
 
-## Usage
+<hr>
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+## Contributing
 
-```dart
-const like = 'sample';
-```
+Calling on all the trendsetting Flutter enthusiasts! ❤️‍🔥 Join forces as we pioneer the creation of the ultimate, expansive, and seamless UI Library for Flutter. Let's make waves together! 🚀
+Please refer to our contribution guidelines for details and don't forget to drop a Hi at [Instagram](https://www.instagram.com/imaditya_singh)
 
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+<hr>
