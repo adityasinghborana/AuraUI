@@ -1,6 +1,6 @@
 name: aura_ui
-description: "Pre-Built Modular-UI Design component widgets Inspired by material-tailwind and shadcn/ui, NextUI , Chakra UI"
-version: 0.0.1
+description: "UIComponent Library Inspired by material-tailwind and shadcn/ui, NextUI , Chakra UI"
+version: 0.1.1
 homepage:
 
 environment:

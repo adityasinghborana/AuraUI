@@ -6,11 +6,12 @@ import '../../enums/carousel_indicator_type.dart';
 import 'components/indicator_dot.dart';
 import 'components/indicator_line.dart';
 
-class AuraUI extends StatefulWidget {
-  const AuraUI({
+class AuraUICarousel extends StatefulWidget {
+  const AuraUICarousel({
     super.key,
     required this.images,
     this.height = 200,
+    required this.pageController,
     this.duration = const Duration(seconds: 5),
     this.borderRadius = 8,
     this.padding = const EdgeInsets.all(8),
@@ -58,40 +59,44 @@ class AuraUI extends StatefulWidget {
 
   /// Max Width for Carousel ; default: 430
   final double? maxWidth;
+  /// Page Controller
+final PageController pageController;
 
   @override
-  State<AuraUI> createState() => _AuraUIState();
+  State<AuraUICarousel> createState() => _AuraUICarouselState();
 }
 
-class _AuraUIState extends State<AuraUI> {
-  PageController? _pageController;
+class _AuraUICarouselState extends State<AuraUICarousel> {
+  late PageController _pageController;
   int currentIndex = 0;
 
   void _startAutoChange() {
     Timer.periodic(widget.duration!, (timer) {
-      if (currentIndex != widget.images.length - 1) {
-        currentIndex++;
-      } else {
-        currentIndex = 0;
+      if (_pageController.hasClients) {  // Check if PageController has clients
+        if (currentIndex != widget.images.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        _pageController.animateToPage(
+          currentIndex,
+          duration: widget.swipeDuration!,
+          curve: widget.curve!,
+        );
       }
-      _pageController!.animateToPage(
-        currentIndex,
-        duration: widget.swipeDuration!,
-        curve: widget.curve!,
-      );
     });
   }
 
   @override
   void initState() {
     super.initState();
-    _pageController = PageController();
+    _pageController = widget.pageController;
     _startAutoChange();
   }
 
   @override
   void dispose() {
-    _pageController!.dispose();
+    _pageController.dispose();
     super.dispose();
   }
 
