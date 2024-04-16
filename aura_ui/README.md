@@ -1,5 +1,5 @@
-<img src="https://github.com/opxica/modular-ui/assets/67179751/c4f1045b-0d7a-4228-b663-3e1f8238d59c" alt="ModularUI : Pre-built beautiful flutter widgets Inspired by material-tailwind and shadcn/ui, NextUI ,  Chakra UI" />
-</p>
+
+
 
 
 <p align="center">
@@ -15,7 +15,7 @@ Craft dynamic, inclusive, and stunning Flutter UIs with our  Modular-UI Design c
 Run this command in your terminal
 
 ```terminal
-flutter pub add aura_ui
+flutter pub add auraa_ui
 ```
 
 #### Import
@@ -23,7 +23,7 @@ flutter pub add aura_ui
 Add this line to import the package.
 
 ```dart
-import 'package:aura_ui/modular_ui.dart';
+import 'package:auraa_ui/aura_ui.dart';
 ```
 
 <hr>
@@ -33,7 +33,11 @@ import 'package:aura_ui/modular_ui.dart';
 ## Our Widget Catalog:
 
 
-### Carousels(More are still Coming )
+### Carousels
+### Buttons(Simple,Loading, WithIcon)
+### Carousels
+
+### (More are still Coming WIP)
 
 
 ## Features

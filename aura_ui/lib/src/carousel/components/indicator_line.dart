@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 class IndicatorLine extends StatelessWidget {
   final int positionIndex, currentIndex;
+
   const IndicatorLine({
     super.key,
     required this.currentIndex,
     required this.positionIndex,
   });
+
   @override
   Widget build(BuildContext context) {
     return Padding(

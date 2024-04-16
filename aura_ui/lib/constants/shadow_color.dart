@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'colors.dart';
 
-
-const mUILightBigShadow = [
+const auraUILightBigShadow = [
   BoxShadow(
-    color: AuraUIShadowColor,
+    color: auraUIShadowColor,
     blurRadius: 16,
     offset: Offset(0, 12),
   ),
 ];
 
-const mUILightSmallShadow = [
+const auraUILightSmallShadow = [
   BoxShadow(
-    color: AuraUIShadowColor,
+    color: auraUIShadowColor,
     blurRadius: 12,
     offset: Offset(2, 4),
   ),

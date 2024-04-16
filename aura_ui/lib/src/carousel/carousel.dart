@@ -59,8 +59,9 @@ class AuraUICarousel extends StatefulWidget {
 
   /// Max Width for Carousel ; default: 430
   final double? maxWidth;
+
   /// Page Controller
-final PageController pageController;
+  final PageController pageController;
 
   @override
   State<AuraUICarousel> createState() => _AuraUICarouselState();
@@ -72,7 +73,8 @@ class _AuraUICarouselState extends State<AuraUICarousel> {
 
   void _startAutoChange() {
     Timer.periodic(widget.duration!, (timer) {
-      if (_pageController.hasClients) {  // Check if PageController has clients
+      if (_pageController.hasClients) {
+        // Check if PageController has clients
         if (currentIndex != widget.images.length - 1) {
           currentIndex++;
         } else {
@@ -179,7 +181,7 @@ class _AuraUICarouselState extends State<AuraUICarousel> {
                               } else {
                                 currentIndex = widget.images.length - 1;
                               }
-                              _pageController!.animateToPage(
+                              _pageController.animateToPage(
                                 currentIndex,
                                 duration: widget.swipeDuration!,
                                 curve: widget.curve!,
@@ -203,7 +205,7 @@ class _AuraUICarouselState extends State<AuraUICarousel> {
                               } else {
                                 currentIndex = 0;
                               }
-                              _pageController!.animateToPage(
+                              _pageController.animateToPage(
                                 currentIndex,
                                 duration: widget.swipeDuration!,
                                 curve: widget.curve!,

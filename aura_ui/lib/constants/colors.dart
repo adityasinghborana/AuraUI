@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-const AuraUIShadowColor = Color.fromRGBO(72, 76, 82, 0.2);
+const auraUIShadowColor = Color.fromRGBO(72, 76, 82, 0.2);
