@@ -22,7 +22,7 @@ flutter pub add aura_ui
 Add this line to import the package.
 
 ```dart
-import 'package:aura_ui/aura_ui.dart';
+import 'package:auraa_ui/aura_ui.dart';
 ```
 
 <hr>
