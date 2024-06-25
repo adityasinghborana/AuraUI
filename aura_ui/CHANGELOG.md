@@ -1,7 +1,4 @@
-## 1.0.3
+## [1.0.4] 
 
-
-  -Added Buttons in the Catalog 
-  - AuiIconButton
-  - AuiLoadingButton
-  - AuiSimpleButton
+### Added
+- Added new widget `AuraUICarouselTappable` with onTap functionality.

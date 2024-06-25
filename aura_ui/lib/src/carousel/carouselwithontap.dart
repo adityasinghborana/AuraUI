@@ -1,16 +1,16 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import '../../enums/carousel_button_type.dart';
 import '../../enums/carousel_indicator_type.dart';
+import 'Model/Carousel_item.dart';
 import 'components/indicator_dot.dart';
 import 'components/indicator_line.dart';
 
-class AuraUICarousel extends StatefulWidget {
-  const AuraUICarousel({
+class AuraUICarouselTappable extends StatefulWidget {
+  const AuraUICarouselTappable({
     super.key,
-    required this.images,
+    required this.items,
     this.height = 200,
     required this.pageController,
     this.duration = const Duration(seconds: 5),
@@ -25,8 +25,8 @@ class AuraUICarousel extends StatefulWidget {
     this.maxWidth = 430,
   });
 
-  /// ImageUrls for  Carousel
-  final List<String> images;
+  /// Carousel items for Carousel
+  final List<CarouselItem> items;
 
   /// Height for Carousel ; default: 200
   final double? height;
@@ -61,17 +61,14 @@ class AuraUICarousel extends StatefulWidget {
   /// Max Width for Carousel ; default: 430
   final double? maxWidth;
 
-  /// Max Width for Carousel ; default: 430
-
-
   /// Page Controller
   final PageController pageController;
 
   @override
-  State<AuraUICarousel> createState() => _AuraUICarouselState();
+  State<AuraUICarouselTappable> createState() => _AuraUICarouselTappableState();
 }
 
-class _AuraUICarouselState extends State<AuraUICarousel> {
+class _AuraUICarouselTappableState extends State<AuraUICarouselTappable> {
   late PageController _pageController;
   int currentIndex = 0;
 
@@ -79,7 +76,7 @@ class _AuraUICarouselState extends State<AuraUICarousel> {
     Timer.periodic(widget.duration!, (timer) {
       if (_pageController.hasClients) {
         // Check if PageController has clients
-        if (currentIndex != widget.images.length - 1) {
+        if (currentIndex != widget.items.length - 1) {
           currentIndex++;
         } else {
           currentIndex = 0;
@@ -121,46 +118,49 @@ class _AuraUICarouselState extends State<AuraUICarousel> {
               physics: const BouncingScrollPhysics(),
               allowImplicitScrolling: true,
               children: List.generate(
-                widget.images.length,
+                widget.items.length,
                     (index) {
-                  final image = widget.images[index];
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    child: SizedBox(
-                      height: widget.height,
-                      width: widget.maxWidth,
-                      child: ClipRRect(
-                        borderRadius:
-                        BorderRadius.circular(widget.borderRadius!),
-                        child: image.startsWith("http")
-                            ? FadeInImage(
-                          placeholder: const AssetImage(""),
-                          image: NetworkImage(image),
-                          fit: BoxFit.cover,
-                          fadeInDuration:
-                          const Duration(milliseconds: 300),
-                          fadeOutDuration:
-                          const Duration(milliseconds: 100),
-                          imageErrorBuilder:
-                              (context, error, stackTrace) {
-                            return const Center(
-                              child: Icon(
-                                Icons.error,
-                                color: Colors.red,
-                              ),
-                            );
-                          },
-                          placeholderErrorBuilder:
-                              (context, error, stackTrace) {
-                            return const Center(
-                              child:
-                              CircularProgressIndicator(), // Circular loader for placeholder
-                            );
-                          },
-                        )
-                            : Image.asset(
-                          image,
-                          fit: BoxFit.cover,
+                  final item = widget.items[index];
+                  return GestureDetector(
+                    onTap: item.onTap,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: SizedBox(
+                        height: widget.height,
+                        width: widget.maxWidth,
+                        child: ClipRRect(
+                          borderRadius:
+                          BorderRadius.circular(widget.borderRadius!),
+                          child: item.imageUrl.startsWith("http")
+                              ? FadeInImage(
+                            placeholder: const AssetImage(""),
+                            image: NetworkImage(item.imageUrl),
+                            fit: BoxFit.cover,
+                            fadeInDuration:
+                            const Duration(milliseconds: 300),
+                            fadeOutDuration:
+                            const Duration(milliseconds: 100),
+                            imageErrorBuilder:
+                                (context, error, stackTrace) {
+                              return const Center(
+                                child: Icon(
+                                  Icons.error,
+                                  color: Colors.red,
+                                ),
+                              );
+                            },
+                            placeholderErrorBuilder:
+                                (context, error, stackTrace) {
+                              return const Center(
+                                child:
+                                CircularProgressIndicator(), // Circular loader for placeholder
+                              );
+                            },
+                          )
+                              : Image.asset(
+                            item.imageUrl,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
@@ -183,7 +183,7 @@ class _AuraUICarouselState extends State<AuraUICarousel> {
                         if (currentIndex != 0) {
                           currentIndex--;
                         } else {
-                          currentIndex = widget.images.length - 1;
+                          currentIndex = widget.items.length - 1;
                         }
                         _pageController.animateToPage(
                           currentIndex,
@@ -204,7 +204,7 @@ class _AuraUICarouselState extends State<AuraUICarousel> {
                     ),
                     IconButton(
                       onPressed: () {
-                        if (currentIndex != widget.images.length - 1) {
+                        if (currentIndex != widget.items.length - 1) {
                           currentIndex++;
                         } else {
                           currentIndex = 0;
@@ -241,7 +241,7 @@ class _AuraUICarouselState extends State<AuraUICarousel> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
-                    widget.images.length,
+                    widget.items.length,
                         (index) =>
                     widget.indicatorType == CarouselIndicatorType.dot
                         ? IndicatorDot(
