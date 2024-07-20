@@ -1,4 +1,4 @@
-## [1.0.4] 
+## [1.0.5] 
 
 ### Added
-- Added new widget `AuraUICarouselTappable` with onTap functionality.
+- Added new widget 'Sparkle Text'.

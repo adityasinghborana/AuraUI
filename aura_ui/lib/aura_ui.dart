@@ -1,5 +1,4 @@
 library aura_ui;
-
 export 'src/carousel/carousel.dart';
 export 'src/carousel/carouselwithontap.dart';
 export 'enums/carousel_button_type.dart';
@@ -9,3 +8,4 @@ export 'src/buttons/icon_button.dart';
 export 'src/buttons/loading_button.dart';
 export 'src/buttons/simple_button.dart';
 export 'src/carousel/Model/Carousel_item.dart';
+export 'src/texts/sparkle_text.dart';
