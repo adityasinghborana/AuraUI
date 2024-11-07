@@ -63,19 +63,41 @@ import 'package:flutter/material.dart';
 
 class AuiIconButton extends StatelessWidget {
   //final double borderRadius;
+  /// The gap between each item in a layout or container.
   final double itemGap;
+
+  /// The width of the button.
   final double buttonWidth;
+
+  /// The border radius of the button, customizable with the [ButtonRadiusType] enum.
   final ButtonRadiusType? borderRadius;
+
+  /// The width of the icon, if specified. Allows for flexible icon sizing within the button.
   final double? iconWidth;
+
+  /// The background color of the button.
   final Color backgroundColor;
+
+  /// The icon displayed within the button.
   final IconData icon;
+
+  /// The size of the icon within the button.
   final double iconSize;
+
+  /// The weight or thickness of the icon, affecting its visual boldness.
   final double iconWeight;
 
+  /// The color of the icon, if specified. Defaults to a standard color if left null.
   final Color? iconColor;
 
+  /// The text style for any text displayed within the button.
+  /// This allows customization of font size, weight, color, and more.
   final TextStyle? textStyle;
+
+  /// The callback function triggered when the button is pressed.
+  /// If left null, the button will not respond to user interaction.
   final void Function()? onPressed;
+
 
   // Corrected constructor
   const AuiIconButton({
@@ -119,8 +141,8 @@ class AuiIconButton extends StatelessWidget {
         child: TextButton(
           onPressed: onPressed,
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(backgroundColor),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            backgroundColor: WidgetStateProperty.all<Color>(backgroundColor),
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(getRadius()),
               ),
