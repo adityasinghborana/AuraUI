@@ -31,6 +31,8 @@ import 'package:auraa_ui/aura_ui.dart';
 
 
 ### Carousels(More are still Coming )
+### Buttons - We build Different Types of Buttons For you that you can directly Use in your Design check the example on the Github Repo 
+<img src="https://raw.githubusercontent.com/adityasinghborana/AuraUI/main/aura_ui/assets/buttons.png">
 
 
 ## Features

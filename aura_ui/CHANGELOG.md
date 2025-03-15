@@ -1,3 +1,9 @@
+
+### Updated
+## [1.0.7]
+
+### Updated
+- Added Diffrent Buttons Styles .
 ## [1.0.6]
 
 ### Updated

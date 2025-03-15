@@ -98,7 +98,6 @@ class AuiIconButton extends StatelessWidget {
   /// If left null, the button will not respond to user interaction.
   final void Function()? onPressed;
 
-
   // Corrected constructor
   const AuiIconButton({
     Key? key,

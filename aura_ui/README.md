@@ -34,7 +34,9 @@ import 'package:auraa_ui/aura_ui.dart';
 
 
 ### Carousels
-### Buttons(Simple,Loading, WithIcon)
+### Buttons(Simple,Loading, WithIcon) and others styles 
+### Buttons - We build Different Types of Buttons For you that you can directly Use in your Design check the example on the Github Repo
+<img src="https://raw.githubusercontent.com/adityasinghborana/AuraUI/main/aura_ui/assets/buttons.png">
 ### Carousels
 
 ### (More are still Coming WIP)

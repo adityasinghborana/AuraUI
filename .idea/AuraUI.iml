@@ -6,6 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/aura_ui/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/aura_ui/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/aura_ui/build" />
+      <excludeFolder url="file://$MODULE_DIR$/aura_ui/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/aura_ui/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/aura_ui/example/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
