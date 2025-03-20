@@ -15,7 +15,7 @@ packages:
       path: "/Users/aditya/StudioProjects/AuraUI/aura_ui"
       relative: false
     source: path
-    version: "1.0.7"
+    version: "1.0.8"
   boolean_selector:
     dependency: transitive
     description:

@@ -1,8 +1,9 @@
 import 'package:auraa_ui/aura_ui.dart';
-import 'package:example/Toasts.dart';
+import 'package:example/layout/my_app_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'mydrawer.dart';
+import 'layout/custom_Scaffold.dart';
+import 'layout/mydrawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +33,8 @@ class MyApp extends StatelessWidget {
 }
 
 class ButtonsPage extends StatefulWidget {
+  const ButtonsPage({super.key});
+
   @override
   State<ButtonsPage> createState() => _ButtonsPageState();
 }
@@ -39,20 +42,8 @@ class ButtonsPage extends StatefulWidget {
 class _ButtonsPageState extends State<ButtonsPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: MyDrawer(),
-
-      backgroundColor: Colors.black87,
-      //backgroundColor: Colors.white,
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        //backgroundColor: Colors.white,
-        title: Text(
-          "Buttons Example",
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
+    return CustomScaffold(
+      name: "Buttons",
       body: Center(
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,

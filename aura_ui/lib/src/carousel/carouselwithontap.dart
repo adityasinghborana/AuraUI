@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../enums/carousel_button_type.dart';
 import '../../enums/carousel_indicator_type.dart';
-import 'Model/Carousel_item.dart';
+import 'Model/carousel_item.dart';
 import 'components/indicator_dot.dart';
 import 'components/indicator_line.dart';
 
@@ -119,7 +119,7 @@ class _AuraUICarouselTappableState extends State<AuraUICarouselTappable> {
               allowImplicitScrolling: true,
               children: List.generate(
                 widget.items.length,
-                    (index) {
+                (index) {
                   final item = widget.items[index];
                   return GestureDetector(
                     onTap: item.onTap,
@@ -130,37 +130,37 @@ class _AuraUICarouselTappableState extends State<AuraUICarouselTappable> {
                         width: widget.maxWidth,
                         child: ClipRRect(
                           borderRadius:
-                          BorderRadius.circular(widget.borderRadius!),
+                              BorderRadius.circular(widget.borderRadius!),
                           child: item.imageUrl.startsWith("http")
                               ? FadeInImage(
-                            placeholder: const AssetImage(""),
-                            image: NetworkImage(item.imageUrl),
-                            fit: BoxFit.cover,
-                            fadeInDuration:
-                            const Duration(milliseconds: 300),
-                            fadeOutDuration:
-                            const Duration(milliseconds: 100),
-                            imageErrorBuilder:
-                                (context, error, stackTrace) {
-                              return const Center(
-                                child: Icon(
-                                  Icons.error,
-                                  color: Colors.red,
-                                ),
-                              );
-                            },
-                            placeholderErrorBuilder:
-                                (context, error, stackTrace) {
-                              return const Center(
-                                child:
-                                CircularProgressIndicator(), // Circular loader for placeholder
-                              );
-                            },
-                          )
+                                  placeholder: AssetImage(item.imageUrl),
+                                  image: NetworkImage(item.imageUrl),
+                                  fit: BoxFit.cover,
+                                  fadeInDuration:
+                                      const Duration(milliseconds: 300),
+                                  fadeOutDuration:
+                                      const Duration(milliseconds: 100),
+                                  imageErrorBuilder:
+                                      (context, error, stackTrace) {
+                                    return const Center(
+                                      child: Icon(
+                                        Icons.error,
+                                        color: Colors.red,
+                                      ),
+                                    );
+                                  },
+                                  placeholderErrorBuilder:
+                                      (context, error, stackTrace) {
+                                    return const Center(
+                                      child:
+                                          CircularProgressIndicator(), // Circular loader for placeholder
+                                    );
+                                  },
+                                )
                               : Image.asset(
-                            item.imageUrl,
-                            fit: BoxFit.cover,
-                          ),
+                                  item.imageUrl,
+                                  fit: BoxFit.cover,
+                                ),
                         ),
                       ),
                     ),
@@ -170,90 +170,90 @@ class _AuraUICarouselTappableState extends State<AuraUICarouselTappable> {
             ),
             widget.showButtons!
                 ? Align(
-              alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 8,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        if (currentIndex != 0) {
-                          currentIndex--;
-                        } else {
-                          currentIndex = widget.items.length - 1;
-                        }
-                        _pageController.animateToPage(
-                          currentIndex,
-                          duration: widget.swipeDuration!,
-                          curve: widget.curve!,
-                        );
-                      },
-                      icon: CircleAvatar(
-                        backgroundColor: widget.buttonType ==
-                            CarouselButtonType.iconOnly
-                            ? Colors.transparent
-                            : Colors.white.withOpacity(0.6),
-                        child: const Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
-                        ),
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        bottom: 8,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              if (currentIndex != 0) {
+                                currentIndex--;
+                              } else {
+                                currentIndex = widget.items.length - 1;
+                              }
+                              _pageController.animateToPage(
+                                currentIndex,
+                                duration: widget.swipeDuration!,
+                                curve: widget.curve!,
+                              );
+                            },
+                            icon: CircleAvatar(
+                              backgroundColor: widget.buttonType ==
+                                      CarouselButtonType.iconOnly
+                                  ? Colors.transparent
+                                  : Colors.white.withValues(alpha: 0.6),
+                              child: const Icon(
+                                Icons.arrow_back_ios,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              if (currentIndex != widget.items.length - 1) {
+                                currentIndex++;
+                              } else {
+                                currentIndex = 0;
+                              }
+                              _pageController.animateToPage(
+                                currentIndex,
+                                duration: widget.swipeDuration!,
+                                curve: widget.curve!,
+                              );
+                            },
+                            icon: CircleAvatar(
+                              backgroundColor: widget.buttonType ==
+                                      CarouselButtonType.iconOnly
+                                  ? Colors.transparent
+                                  : Colors.white.withValues(alpha: 0.6),
+                              child: const Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    IconButton(
-                      onPressed: () {
-                        if (currentIndex != widget.items.length - 1) {
-                          currentIndex++;
-                        } else {
-                          currentIndex = 0;
-                        }
-                        _pageController.animateToPage(
-                          currentIndex,
-                          duration: widget.swipeDuration!,
-                          curve: widget.curve!,
-                        );
-                      },
-                      icon: CircleAvatar(
-                        backgroundColor: widget.buttonType ==
-                            CarouselButtonType.iconOnly
-                            ? Colors.transparent
-                            : Colors.white.withOpacity(0.6),
-                        child: const Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
+                  )
                 : const SizedBox.shrink(),
             widget.showIndicator!
                 ? Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 8,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    widget.items.length,
-                        (index) =>
-                    widget.indicatorType == CarouselIndicatorType.dot
-                        ? IndicatorDot(
-                        currentIndex: currentIndex,
-                        positionIndex: index)
-                        : IndicatorLine(
-                        currentIndex: currentIndex,
-                        positionIndex: index),
-                  ),
-                ),
-              ),
-            )
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        bottom: 8,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          widget.items.length,
+                          (index) =>
+                              widget.indicatorType == CarouselIndicatorType.dot
+                                  ? IndicatorDot(
+                                      currentIndex: currentIndex,
+                                      positionIndex: index)
+                                  : IndicatorLine(
+                                      currentIndex: currentIndex,
+                                      positionIndex: index),
+                        ),
+                      ),
+                    ),
+                  )
                 : const SizedBox.shrink()
           ],
         ),

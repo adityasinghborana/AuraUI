@@ -84,8 +84,9 @@ class AuiButton extends StatelessWidget {
 
   /// Default constructor with customization options.
 
-  AuiButton(
-      {this.onPressed,
+  const AuiButton(
+      {super.key,
+      this.onPressed,
       required this.child,
       this.msPadding,
       this.padding,
@@ -110,8 +111,9 @@ class AuiButton extends StatelessWidget {
       this.tapTargetSize = MaterialTapTargetSize.padded,
       this.splashColor});
 
-  AuiButton.rounded(
-      {required this.onPressed,
+  const AuiButton.rounded(
+      {super.key,
+      required this.onPressed,
       required this.child,
       this.msPadding,
       this.padding,
@@ -136,8 +138,9 @@ class AuiButton extends StatelessWidget {
       this.tapTargetSize = MaterialTapTargetSize.padded,
       this.splashColor});
 
-  AuiButton.small(
-      {required this.onPressed,
+  const AuiButton.small(
+      {super.key,
+      required this.onPressed,
       required this.child,
       this.msPadding,
       this.padding = const EdgeInsets.fromLTRB(8, 4, 8, 4),
@@ -162,8 +165,9 @@ class AuiButton extends StatelessWidget {
       this.tapTargetSize = MaterialTapTargetSize.padded,
       this.splashColor});
 
-  AuiButton.medium(
-      {required this.onPressed,
+  const AuiButton.medium(
+      {super.key,
+      required this.onPressed,
       required this.child,
       this.msPadding,
       this.padding = const EdgeInsets.fromLTRB(24, 16, 24, 16),
@@ -188,8 +192,9 @@ class AuiButton extends StatelessWidget {
       this.tapTargetSize = MaterialTapTargetSize.padded,
       this.splashColor});
 
-  AuiButton.text(
-      {required this.onPressed,
+  const AuiButton.text(
+      {super.key,
+      required this.onPressed,
       required this.child,
       this.msPadding,
       this.padding = const EdgeInsets.all(0),
@@ -214,8 +219,9 @@ class AuiButton extends StatelessWidget {
       this.tapTargetSize = MaterialTapTargetSize.padded,
       this.splashColor});
 
-  AuiButton.block(
-      {required this.onPressed,
+  const AuiButton.block(
+      {super.key,
+      required this.onPressed,
       required this.child,
       this.msPadding,
       this.padding = const EdgeInsets.fromLTRB(24, 16, 24, 16),
@@ -240,8 +246,9 @@ class AuiButton extends StatelessWidget {
       this.tapTargetSize = MaterialTapTargetSize.padded,
       this.splashColor});
 
-  AuiButton.outlined(
-      {required this.onPressed,
+  const AuiButton.outlined(
+      {super.key,
+      required this.onPressed,
       required this.child,
       this.msPadding,
       this.padding = const EdgeInsets.fromLTRB(24, 16, 24, 16),
@@ -266,8 +273,9 @@ class AuiButton extends StatelessWidget {
       this.tapTargetSize = MaterialTapTargetSize.padded,
       this.splashColor});
 
-  AuiButton.large(
-      {required this.onPressed,
+  const AuiButton.large(
+      {super.key,
+      required this.onPressed,
       required this.child,
       this.msPadding,
       this.padding = const EdgeInsets.fromLTRB(36, 20, 36, 20),
@@ -338,18 +346,20 @@ class AuiButton extends StatelessWidget {
                         (Set<WidgetState> states) {
                           if (states.contains(WidgetState.disabled)) {
                             return 0;
-                          } else if (states.contains(WidgetState.pressed))
+                          } else if (states.contains(WidgetState.pressed)) {
                             return elevation! * 2;
-                          else if (states.contains(WidgetState.hovered))
+                          } else if (states.contains(WidgetState.hovered)) {
                             return elevation! * 1.5;
+                          }
                           return elevation!;
                         },
                       ),
                   backgroundColor: msBackgroundColor ??
                       WidgetStateProperty.resolveWith<Color>(
                         (Set<WidgetState> states) {
-                          if (states.contains(WidgetState.disabled))
+                          if (states.contains(WidgetState.disabled)) {
                             return bgColor.withAlpha(100);
+                          }
                           return bgColor;
                         },
                       ),

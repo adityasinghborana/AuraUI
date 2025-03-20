@@ -63,7 +63,6 @@ class AuraUICarousel extends StatefulWidget {
 
   /// Max Width for Carousel ; default: 430
 
-
   /// Page Controller
   final PageController pageController;
 
@@ -122,7 +121,7 @@ class _AuraUICarouselState extends State<AuraUICarousel> {
               allowImplicitScrolling: true,
               children: List.generate(
                 widget.images.length,
-                    (index) {
+                (index) {
                   final image = widget.images[index];
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -131,37 +130,37 @@ class _AuraUICarouselState extends State<AuraUICarousel> {
                       width: widget.maxWidth,
                       child: ClipRRect(
                         borderRadius:
-                        BorderRadius.circular(widget.borderRadius!),
+                            BorderRadius.circular(widget.borderRadius!),
                         child: image.startsWith("http")
                             ? FadeInImage(
-                          placeholder: const AssetImage(""),
-                          image: NetworkImage(image),
-                          fit: BoxFit.cover,
-                          fadeInDuration:
-                          const Duration(milliseconds: 300),
-                          fadeOutDuration:
-                          const Duration(milliseconds: 100),
-                          imageErrorBuilder:
-                              (context, error, stackTrace) {
-                            return const Center(
-                              child: Icon(
-                                Icons.error,
-                                color: Colors.red,
-                              ),
-                            );
-                          },
-                          placeholderErrorBuilder:
-                              (context, error, stackTrace) {
-                            return const Center(
-                              child:
-                              CircularProgressIndicator(), // Circular loader for placeholder
-                            );
-                          },
-                        )
+                                placeholder: const AssetImage(""),
+                                image: NetworkImage(image),
+                                fit: BoxFit.cover,
+                                fadeInDuration:
+                                    const Duration(milliseconds: 300),
+                                fadeOutDuration:
+                                    const Duration(milliseconds: 100),
+                                imageErrorBuilder:
+                                    (context, error, stackTrace) {
+                                  return const Center(
+                                    child: Icon(
+                                      Icons.error,
+                                      color: Colors.red,
+                                    ),
+                                  );
+                                },
+                                placeholderErrorBuilder:
+                                    (context, error, stackTrace) {
+                                  return const Center(
+                                    child:
+                                        CircularProgressIndicator(), // Circular loader for placeholder
+                                  );
+                                },
+                              )
                             : Image.asset(
-                          image,
-                          fit: BoxFit.cover,
-                        ),
+                                image,
+                                fit: BoxFit.cover,
+                              ),
                       ),
                     ),
                   );
@@ -170,90 +169,90 @@ class _AuraUICarouselState extends State<AuraUICarousel> {
             ),
             widget.showButtons!
                 ? Align(
-              alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 8,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        if (currentIndex != 0) {
-                          currentIndex--;
-                        } else {
-                          currentIndex = widget.images.length - 1;
-                        }
-                        _pageController.animateToPage(
-                          currentIndex,
-                          duration: widget.swipeDuration!,
-                          curve: widget.curve!,
-                        );
-                      },
-                      icon: CircleAvatar(
-                        backgroundColor: widget.buttonType ==
-                            CarouselButtonType.iconOnly
-                            ? Colors.transparent
-                            : Colors.white.withOpacity(0.6),
-                        child: const Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
-                        ),
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        bottom: 8,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              if (currentIndex != 0) {
+                                currentIndex--;
+                              } else {
+                                currentIndex = widget.images.length - 1;
+                              }
+                              _pageController.animateToPage(
+                                currentIndex,
+                                duration: widget.swipeDuration!,
+                                curve: widget.curve!,
+                              );
+                            },
+                            icon: CircleAvatar(
+                              backgroundColor: widget.buttonType ==
+                                      CarouselButtonType.iconOnly
+                                  ? Colors.transparent
+                                  : Colors.white.withValues(alpha: 0.6),
+                              child: const Icon(
+                                Icons.arrow_back_ios,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              if (currentIndex != widget.images.length - 1) {
+                                currentIndex++;
+                              } else {
+                                currentIndex = 0;
+                              }
+                              _pageController.animateToPage(
+                                currentIndex,
+                                duration: widget.swipeDuration!,
+                                curve: widget.curve!,
+                              );
+                            },
+                            icon: CircleAvatar(
+                              backgroundColor: widget.buttonType ==
+                                      CarouselButtonType.iconOnly
+                                  ? Colors.transparent
+                                  : Colors.white.withValues(alpha: 0.6),
+                              child: const Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    IconButton(
-                      onPressed: () {
-                        if (currentIndex != widget.images.length - 1) {
-                          currentIndex++;
-                        } else {
-                          currentIndex = 0;
-                        }
-                        _pageController.animateToPage(
-                          currentIndex,
-                          duration: widget.swipeDuration!,
-                          curve: widget.curve!,
-                        );
-                      },
-                      icon: CircleAvatar(
-                        backgroundColor: widget.buttonType ==
-                            CarouselButtonType.iconOnly
-                            ? Colors.transparent
-                            : Colors.white.withOpacity(0.6),
-                        child: const Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
+                  )
                 : const SizedBox.shrink(),
             widget.showIndicator!
                 ? Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 8,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    widget.images.length,
-                        (index) =>
-                    widget.indicatorType == CarouselIndicatorType.dot
-                        ? IndicatorDot(
-                        currentIndex: currentIndex,
-                        positionIndex: index)
-                        : IndicatorLine(
-                        currentIndex: currentIndex,
-                        positionIndex: index),
-                  ),
-                ),
-              ),
-            )
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        bottom: 8,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          widget.images.length,
+                          (index) =>
+                              widget.indicatorType == CarouselIndicatorType.dot
+                                  ? IndicatorDot(
+                                      currentIndex: currentIndex,
+                                      positionIndex: index)
+                                  : IndicatorLine(
+                                      currentIndex: currentIndex,
+                                      positionIndex: index),
+                        ),
+                      ),
+                    ),
+                  )
                 : const SizedBox.shrink()
           ],
         ),

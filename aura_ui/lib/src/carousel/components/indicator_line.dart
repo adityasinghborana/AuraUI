@@ -19,7 +19,7 @@ class IndicatorLine extends StatelessWidget {
         decoration: BoxDecoration(
           color: positionIndex == currentIndex
               ? Colors.white
-              : Colors.white.withOpacity(0.6),
+              : Colors.white.withValues(alpha: 0.6),
           borderRadius: BorderRadius.circular(3),
         ),
       ),

@@ -38,10 +38,11 @@ class SparklesText extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _SparklesTextState createState() => _SparklesTextState();
+  SparklesTextState createState() => SparklesTextState();
 }
 
-class _SparklesTextState extends State<SparklesText> with SingleTickerProviderStateMixin {
+class SparklesTextState extends State<SparklesText>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   final List<Sparkle> _sparkles = [];
   final GlobalKey _childKey = GlobalKey();
@@ -55,15 +56,15 @@ class _SparklesTextState extends State<SparklesText> with SingleTickerProviderSt
       duration: const Duration(milliseconds: 1000),
       vsync: this,
     )..addListener(() {
-      setState(() {
-        for (int i = 0; i < _sparkles.length; i++) {
-          _sparkles[i].lifespan -= 0.1;
-          if (_sparkles[i].lifespan <= 0) {
-            _sparkles[i] = _generateSparkle();
+        setState(() {
+          for (int i = 0; i < _sparkles.length; i++) {
+            _sparkles[i].lifespan -= 0.1;
+            if (_sparkles[i].lifespan <= 0) {
+              _sparkles[i] = _generateSparkle();
+            }
           }
-        }
+        });
       });
-    });
     _controller.repeat();
   }
 
@@ -74,13 +75,15 @@ class _SparklesTextState extends State<SparklesText> with SingleTickerProviderSt
   }
 
   void _onLayoutDone(Duration timeStamp) {
-    final RenderBox renderBox = _childKey.currentContext!.findRenderObject() as RenderBox;
+    final RenderBox renderBox =
+        _childKey.currentContext!.findRenderObject() as RenderBox;
     _childSize = renderBox.size;
     _initializeSparkles();
   }
 
   void _initializeSparkles() {
-    List<Sparkle> newSparkles = List.generate(widget.sparklesCount, (_) => _generateSparkle());
+    List<Sparkle> newSparkles =
+        List.generate(widget.sparklesCount, (_) => _generateSparkle());
     setState(() {
       _sparkles.addAll(newSparkles);
     });
@@ -120,7 +123,9 @@ class _SparklesTextState extends State<SparklesText> with SingleTickerProviderSt
         animation: _controller,
         builder: (context, child) {
           double animationValue = (_controller.value + sparkle.delay) % 1.0;
-          double opacity = animationValue < 0.5 ? animationValue * 2 : (1 - animationValue) * 2;
+          double opacity = animationValue < 0.5
+              ? animationValue * 2
+              : (1 - animationValue) * 2;
           double scale = sparkle.scale * animationValue;
           return Opacity(
             opacity: opacity,

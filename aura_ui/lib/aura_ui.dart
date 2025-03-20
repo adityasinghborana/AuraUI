@@ -35,7 +35,7 @@ export 'src/buttons/simple_button.dart';
 
 /// Model for individual carousel items, allowing configuration of each
 /// item in the carousel.
-export 'src/carousel/Model/Carousel_item.dart';
+export 'src/carousel/Model/carousel_item.dart';
 
 /// Sparkle text component, providing animated sparkle effects to text for a playful UI.
 export 'src/texts/sparkle_text.dart';

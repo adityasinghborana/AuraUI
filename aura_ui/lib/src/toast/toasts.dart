@@ -20,7 +20,7 @@ void simpleToastMessage(
       shape: OutlineInputBorder(borderSide: BorderSide(color: color)),
       width: 300,
       behavior: SnackBarBehavior.floating,
-      duration: Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 1200),
       content: Text(
         text,
         style: TextStyle(color: textColour),
@@ -49,7 +49,7 @@ void lightBackgroundToastMessage(
     shape: OutlineInputBorder(borderSide: BorderSide(color: color)),
     width: 300,
     behavior: SnackBarBehavior.floating,
-    duration: Duration(milliseconds: 1200),
+    duration: const Duration(milliseconds: 1200),
     content: Text(
       text,
       style: TextStyle(color: textColour),
@@ -78,10 +78,10 @@ void iconMessage(
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
     clipBehavior: Clip.antiAliasWithSaveLayer,
     elevation: .5,
-    shape: OutlineInputBorder(borderSide: BorderSide.none),
+    shape: const OutlineInputBorder(borderSide: BorderSide.none),
     width: 300,
     behavior: SnackBarBehavior.floating,
-    duration: Duration(milliseconds: 1200),
+    duration: const Duration(milliseconds: 1200),
     content: Row(
       children: [
         Container(
@@ -90,7 +90,7 @@ void iconMessage(
           color: color.withAlpha(36),
           child: Icon(icon, size: 20, color: iconColor),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         Text(
           text,
           style: TextStyle(color: textColour),
