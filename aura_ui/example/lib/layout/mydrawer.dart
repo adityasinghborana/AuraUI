@@ -18,7 +18,7 @@ class MyDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(color: Colors.grey.shade900),
-            child: Container(
+            child: SizedBox(
               width: 100, // Increase width to give space
               child: Image.asset(
                 "asset/Logo.png", // Ensure correct path

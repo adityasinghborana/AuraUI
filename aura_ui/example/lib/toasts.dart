@@ -1,9 +1,6 @@
 import 'package:auraa_ui/aura_ui.dart';
-import 'package:example/layout/my_app_bar.dart';
 import 'package:flutter/material.dart';
-
-import 'layout/custom_Scaffold.dart';
-import 'layout/mydrawer.dart';
+import 'layout/custom_scaffold.dart';
 
 class ToastPage extends StatefulWidget {
   const ToastPage({super.key});

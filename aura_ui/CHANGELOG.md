@@ -1,12 +1,12 @@
 
-
-### Updated
-## [1.0.9]
-
+## [1.0.8]
 ### Updated
 - Added Three Toasts Styles .
+- fixed file name Convention 
+- withOpacity is replaced with withValue
+- example app is updated with all the widgets 
 
-### Updated
+
 ## [1.0.7]
 
 ### Updated

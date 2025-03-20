@@ -1,7 +1,7 @@
 import 'package:auraa_ui/aura_ui.dart';
 import 'package:flutter/material.dart';
 
-import 'layout/custom_Scaffold.dart';
+import 'layout/custom_scaffold.dart';
 
 class SparkleTextPage extends StatelessWidget {
   const SparkleTextPage({super.key});
