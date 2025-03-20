@@ -1,47 +1,19 @@
 import 'package:auraa_ui/aura_ui.dart';
-import 'package:example/Toasts.dart';
+import 'package:example/example.dart';
 import 'package:flutter/material.dart';
 
 import 'mydrawer.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+class ToastPage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Button Page',
-      theme: ThemeData(
-        iconTheme: IconThemeData(color: Colors.white),
-        buttonTheme:
-            ButtonThemeData(colorScheme: Theme.of(context).colorScheme),
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.black87,
-            onPrimary: Colors.white,
-            primary: Colors.black87),
-        useMaterial3: true,
-      ),
-      home: ButtonsPage(),
-    );
-  }
+  State<ToastPage> createState() => _ToastPageState();
 }
 
-class ButtonsPage extends StatefulWidget {
-  @override
-  State<ButtonsPage> createState() => _ButtonsPageState();
-}
-
-class _ButtonsPageState extends State<ButtonsPage> {
+class _ToastPageState extends State<ToastPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: MyDrawer(),
-
       backgroundColor: Colors.black87,
       //backgroundColor: Colors.white,
       appBar: AppBar(
@@ -49,7 +21,7 @@ class _ButtonsPageState extends State<ButtonsPage> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         //backgroundColor: Colors.white,
         title: Text(
-          "Buttons Example",
+          "Toasts",
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -69,47 +41,41 @@ class _ButtonsPageState extends State<ButtonsPage> {
                       runSpacing: 8.0, // Vertical spacing between wrapped rows
                       alignment: WrapAlignment.center,
                       children: [
-                        elevatedBtn(
-                          "Elevated Button",
-                          Colors.red,
-                          context,
-                        ),
+                        elevatedBtn("Simple Toast", Colors.red, context,
+                            onPressed: () {
+                          simpleToastMessage(
+                              text: "this is Simple Toast",
+                              context: context,
+                              color: Colors.green,
+                              textColour: Colors.white);
+                        }),
                         elevatedRoundedBtn(
-                          "Elevated Rounded Button",
-                          Colors.red,
-                          context,
-                        ),
-                        buildFlatButton(
-                          "Flat Button",
-                          Colors.red,
-                          context,
-                        ),
-                        roundedBtn("Rounded Button", Colors.red),
-                        outLinedBtn("Outline Button", Colors.red),
+                            "Toast With Icon", Colors.red, context,
+                            onPressed: () {
+                          iconMessage(
+                            text: "Toast With Icon",
+                            context: context,
+                            color: Colors.green,
+                            textColour: Colors.white,
+                            icon: Icons.ice_skating_outlined,
+                            iconColor: Colors.white,
+                          );
+                        }),
+                        buildFlatButton("Light Bg Toast", Colors.red, context,
+                            onPressed: () {
+                          // display the toast
+                          lightBackgroundToastMessage(
+                              text: "this is light bg",
+                              context: context,
+                              color: Colors.green,
+                              textColour: Colors.white);
+                        }),
                       ],
                     ),
                   ],
                 ),
                 SizedBox(
                   height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Wrap(
-                      spacing: 8.0, // Horizontal spacing between buttons
-                      runSpacing: 8.0, // Vertical spacing between wrapped rows
-                      alignment: WrapAlignment.center,
-                      children: [
-                        outlinedRoundedBtn(
-                            "Outline Rounded Button", Colors.red),
-                        softBtn("Soft Button", Colors.red),
-                        softRoundedBtn("Soft Rounded Button", Colors.red),
-                        textBtn("Text Button", Colors.red),
-                        textRoundedBtn("Text Rounded Button", Colors.red),
-                      ],
-                    ),
-                  ],
                 ),
               ],
             ),
@@ -119,13 +85,10 @@ class _ButtonsPageState extends State<ButtonsPage> {
     );
   }
 
-  Widget elevatedBtn(
-    String btnName,
-    Color color,
-    BuildContext context,
-  ) {
+  Widget elevatedBtn(String btnName, Color color, BuildContext context,
+      {required VoidCallback? onPressed}) {
     return AuiButton(
-      onPressed: () {},
+      onPressed: onPressed,
       elevation: 2,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       backgroundColor: color,
@@ -136,13 +99,10 @@ class _ButtonsPageState extends State<ButtonsPage> {
     );
   }
 
-  Widget elevatedRoundedBtn(
-    String btnName,
-    Color color,
-    BuildContext context,
-  ) {
+  Widget elevatedRoundedBtn(String btnName, Color color, BuildContext context,
+      {required VoidCallback? onPressed}) {
     return AuiButton(
-      onPressed: () {},
+      onPressed: onPressed,
       elevation: 2,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       backgroundColor: color,
@@ -154,13 +114,10 @@ class _ButtonsPageState extends State<ButtonsPage> {
     );
   }
 
-  Widget buildFlatButton(
-    String btnName,
-    Color color,
-    BuildContext context,
-  ) {
+  Widget buildFlatButton(String btnName, Color color, BuildContext context,
+      {required VoidCallback? onPressed}) {
     return AuiButton(
-      onPressed: () {},
+      onPressed: onPressed,
       elevation: 0,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       backgroundColor: color,

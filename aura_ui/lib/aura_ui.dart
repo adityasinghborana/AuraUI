@@ -41,3 +41,4 @@ export 'src/carousel/Model/Carousel_item.dart';
 export 'src/texts/sparkle_text.dart';
 
 export 'src/buttons/buttons.dart';
+export 'src/toast/toasts.dart';

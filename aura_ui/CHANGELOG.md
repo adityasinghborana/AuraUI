@@ -1,4 +1,11 @@
 
+
+### Updated
+## [1.0.9]
+
+### Updated
+- Added Three Toasts Styles .
+
 ### Updated
 ## [1.0.7]
 

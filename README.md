@@ -1,6 +1,6 @@
 
 <p align="center">
-Craft dynamic, inclusive, and stunning Flutter UIs with our  Modular-UI Design component widgets Inspired by material-tailwind and shadcn/ui, NextUI , Chakra UI
+Craft dynamic, inclusive, and stunning Flutter UIs with our  Modular-UI Design component widgets Inspired by material-tailwind and shadcn ui, NextUI , Chakra UI
 </p>
 
 <hr>
@@ -33,7 +33,10 @@ import 'package:auraa_ui/aura_ui.dart';
 ### Carousels(More are still Coming )
 ### Buttons - We build Different Types of Buttons For you that you can directly Use in your Design check the example on the Github Repo 
 <img src="https://raw.githubusercontent.com/adityasinghborana/AuraUI/main/aura_ui/assets/buttons.png">
-
+ /// 🔥 Toasts - We've Got You Covered!  
+/// Elevate your UI with different types of toasts that you can use instantly.  
+/// Check out the example on our GitHub repo and integrate them seamlessly! 🚀🎉
+ <img src="https://raw.githubusercontent.com/adityasinghborana/AuraUI/refs/heads/main/aura_ui/assets/Simple%20Toast.png">
 
 ## Features
 
@@ -53,6 +56,6 @@ import 'package:auraa_ui/aura_ui.dart';
 ## Contributing
 
 Calling on all the trendsetting Flutter enthusiasts! ❤️‍🔥 Join forces as we pioneer the creation of the ultimate, expansive, and seamless UI Library for Flutter. Let's make waves together! 🚀
-Please refer to our contribution guidelines for details and don't forget to drop a Hi at [Instagram](https://www.instagram.com/imaditya_singh)
+Please refer to our contribution guidelines for details and don't forget to drop a Hi at [Instagram](https://www.instagram.com/doctor_who_codes/)
 
 <hr>
