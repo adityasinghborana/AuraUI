@@ -1,16 +1,32 @@
 import 'package:example/carousal_simple.dart';
+import 'package:example/dialogs.dart';
 import 'package:example/sparkle_text.dart';
 import 'package:example/tappable_carousal.dart';
 import 'package:example/toasts.dart';
 import 'package:example/example.dart';
 import 'package:flutter/material.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
+
+  @override
+  State<MyDrawer> createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
+  final GlobalKey<DrawerControllerState> _drawerKey = GlobalKey();
+
+  void openDrawer() {
+    _drawerKey.currentState?.open();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+            topRight: Radius.circular(00), bottomRight: Radius.circular(0)),
+      ),
       width: 250,
       backgroundColor: Colors.black87,
       child: ListView(
@@ -51,6 +67,11 @@ class MyDrawer extends StatelessWidget {
             icon: Icons.animation,
             title: "Sparkle Text",
             destination: SparkleTextPage(),
+          ),
+          CustomListTile(
+            icon: Icons.animation,
+            title: "Dialogs",
+            destination: Dialogs(),
           ),
         ],
       ),

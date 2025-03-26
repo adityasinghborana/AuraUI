@@ -1,4 +1,9 @@
 
+## [1.0.9]
+### Updated
+- Added Dialog in the widget Catalog
+- example app is updated with dialog widget
+
 ## [1.0.8]
 ### Updated
 - Added Three Toasts Styles .

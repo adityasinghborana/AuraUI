@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
             seedColor: Colors.black87,
             onPrimary: Colors.white,
             primary: Colors.black87),
-        useMaterial3: true,
       ),
       home: ButtonsPage(),
     );

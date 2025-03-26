@@ -55,6 +55,13 @@ Introducing **Sparkle Text** - Add a touch of magic to your UI with animated spa
 <img src="https://raw.githubusercontent.com/adityasinghborana/AuraUI/refs/heads/main/aura_ui/assets/sparkletext.png">
 <hr>
 
+### ✨ Dialogs
+Introducing **Dialogs** - Elevate your UI with beautifully crafted dialogs! 🚀 Add a touch of elegance and interactivity with smooth animations and dynamic effects. Perfect for confirmations, alerts, or eye-catching highlights.
+
+<img src="https://raw.githubusercontent.com/adityasinghborana/AuraUI/refs/heads/main/aura_ui/assets/dialogs.png">
+<hr>
+
+
 ## Features
 
 - **Comprehensive Modular-UI Design components:** Build modern and feature-rich interfaces with a wide range of buttons, cards, forms, navigation elements, and more.
