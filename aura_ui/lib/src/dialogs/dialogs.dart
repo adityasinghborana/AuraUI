@@ -46,7 +46,7 @@ class AuiDialog {
       builder: (_) {
         return Dialog(
           shape: RoundedRectangleBorder(
-            borderRadius: borderRadius ?? BorderRadius.all(Radius.circular(12)),
+            borderRadius: borderRadius ?? const BorderRadius.all(Radius.circular(12)),
           ),
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: SizedBox(
@@ -62,12 +62,12 @@ class AuiDialog {
                     children: [
                       if (icon != null) ...[
                         icon,
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                       ],
                       Expanded(
                         child: Text(
                           title,
-                          style: TextStyle(fontWeight: FontWeight.w600),
+                          style: const TextStyle(fontWeight: FontWeight.w600),
                         ),
                       ),
                       // Close button
@@ -76,7 +76,7 @@ class AuiDialog {
                         child: Icon(
                           Icons.close,
                           size: 20,
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.black.withValues(alpha: 0.5),
                         ),
                       )
                     ],

@@ -18,11 +18,11 @@ class Dialogs extends StatelessWidget {
               actions: [
                 AuiButton.text(
                   onPressed: () {},
+                  backgroundColor: Colors.red,
                   child: Text(
                     "cancel",
                     style: TextStyle(color: Colors.red),
                   ),
-                  backgroundColor: Colors.red,
                 ),
                 SizedBox(
                   width: 20,
@@ -30,17 +30,17 @@ class Dialogs extends StatelessWidget {
                 AuiButton(
                   borderRadiusAll: 0,
                   onPressed: () {},
+                  backgroundColor: Colors.green,
                   child: Text(
                     "confirm",
                     style: TextStyle(color: Colors.white),
                   ),
-                  backgroundColor: Colors.green,
                 ),
               ]),
           elevation: 0,
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           backgroundColor: Colors.white,
-          child: Text("Static drawer",
+          child: Text("Static dialog",
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 color: Colors.green,
