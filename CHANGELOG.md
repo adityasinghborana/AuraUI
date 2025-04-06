@@ -1,4 +1,8 @@
 
+## [1.0.10]
+### Updated
+- fixed linting errors 
+
 ## [1.0.9]
 ### Updated
 - Added Dialog in the widget Catalog

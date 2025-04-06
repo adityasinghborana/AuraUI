@@ -1,5 +1,5 @@
 <p align="center">
-Craft dynamic, inclusive, and stunning Flutter UIs with our Modular-UI Design component widgets Inspired by Material-Tailwind, ShadCN UI, NextUI, and Chakra UI.
+Craft or use our pre made Widgets dynamic, inclusive, and stunning Flutter UIs with our Modular-UI Design component widgets Inspired by ShadCN UI, NextUI, and Chakra UI.
 </p>
 
 <hr>

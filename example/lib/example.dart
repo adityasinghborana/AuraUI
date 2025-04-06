@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                     // handel other platforms you are targeting
                   },
           ),
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.white),
           scaffoldBackgroundColor: Colors.grey[200],
           buttonTheme:
               ButtonThemeData(colorScheme: Theme.of(context).colorScheme),
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
               primary: Colors.black87),
         ),
         routes: {
-          '/': (context) => ButtonsPage(),
+          '/': (context) => const ButtonsPage(),
         });
   }
 }
