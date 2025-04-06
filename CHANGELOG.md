@@ -1,3 +1,6 @@
+## [1.0.11]
+### Updated
+- fixed documentation link
 
 ## [1.0.10]
 ### Updated
