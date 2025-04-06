@@ -49,7 +49,7 @@ class _ButtonsPageState extends State<ButtonsPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
@@ -86,11 +86,11 @@ class _ButtonsPageState extends State<ButtonsPage> {
     return AuiButton(
       onPressed: () {},
       elevation: 2,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       backgroundColor: color,
       child: Text(
         btnName,
-        style: TextStyle(color: Colors.white),
+        style: const TextStyle(color: Colors.white),
       ),
     );
   }
@@ -103,12 +103,10 @@ class _ButtonsPageState extends State<ButtonsPage> {
     return AuiButton(
       onPressed: () {},
       elevation: 2,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       backgroundColor: color,
       borderRadiusAll: 20,
       child: Text(
         btnName,
-        style: TextStyle(color: Colors.white),
       ),
     );
   }
@@ -121,11 +119,9 @@ class _ButtonsPageState extends State<ButtonsPage> {
     return AuiButton(
       onPressed: () {},
       elevation: 0,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       backgroundColor: color,
       child: Text(
         btnName,
-        style: TextStyle(color: Colors.white),
       ),
     );
   }
@@ -134,12 +130,10 @@ class _ButtonsPageState extends State<ButtonsPage> {
     return AuiButton(
       onPressed: () {},
       elevation: 0,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       backgroundColor: color,
       borderRadiusAll: 20,
       child: Text(
         btnName,
-        style: TextStyle(color: Colors.white),
       ),
     );
   }
@@ -148,7 +142,6 @@ class _ButtonsPageState extends State<ButtonsPage> {
     return AuiButton.outlined(
       onPressed: () {},
       elevation: 0,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       borderColor: color,
       splashColor: color.withValues(alpha: 0.1),
       child: Text(
@@ -162,7 +155,6 @@ class _ButtonsPageState extends State<ButtonsPage> {
     return AuiButton.outlined(
       onPressed: () {},
       elevation: 0,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       borderColor: color,
       splashColor: color.withValues(alpha: 0.1),
       borderRadiusAll: 20,
@@ -177,7 +169,6 @@ class _ButtonsPageState extends State<ButtonsPage> {
     return AuiButton(
       onPressed: () {},
       elevation: 0,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       borderColor: color,
       backgroundColor: color.withValues(alpha: 0.12),
       splashColor: color.withValues(alpha: 0.2),
@@ -192,7 +183,6 @@ class _ButtonsPageState extends State<ButtonsPage> {
     return AuiButton(
       onPressed: () {},
       elevation: 0,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       borderColor: color,
       backgroundColor: color.withValues(alpha: 0.12),
       splashColor: color.withValues(alpha: 0.2),
@@ -207,7 +197,6 @@ class _ButtonsPageState extends State<ButtonsPage> {
   Widget textBtn(String btnName, Color color) {
     return AuiButton.text(
       onPressed: () {},
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       splashColor: color.withValues(alpha: 0.1),
       child: Text(
         btnName,
@@ -220,7 +209,6 @@ class _ButtonsPageState extends State<ButtonsPage> {
     return AuiButton.text(
       onPressed: () {},
       elevation: 0,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       splashColor: color.withValues(alpha: 0.1),
       borderRadiusAll: 20,
       child: Text(
