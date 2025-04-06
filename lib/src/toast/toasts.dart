@@ -30,7 +30,6 @@ void simpleToastMessage(
   );
 }
 
-
 /// Displays a toast message with a light background effect.
 ///
 /// The message appears with a slightly transparent background.
